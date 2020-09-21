@@ -6,14 +6,8 @@ const app = new Koa()
 const router = new KoaRouter()
 // 使用中间件
 app.use(router.routes())
-<<<<<<< HEAD
-  .use(router.allowedMethods())
-  // 测试接口
-router.get("/test", (ctx,next) => {
-=======
 	.use(router.allowedMethods())
 router.get("/test", (ctx, next) => {
->>>>>>> 1978a0b59cadc997994722834c103740e258073d
 	// res.setHeader("Content-Type", "text/html;charset=utf-8");
 	// res.end("如何评价《英雄联盟》S10 主题曲？");
 	const string = "如何评价《英雄联盟》S10 主题曲？"
