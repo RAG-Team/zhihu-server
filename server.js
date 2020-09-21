@@ -6,21 +6,33 @@ const app = new Koa()
 const router = new KoaRouter()
 // 使用中间件
 app.use(router.routes())
+<<<<<<< HEAD
   .use(router.allowedMethods())
   // 测试接口
 router.get("/test", (ctx,next) => {
+=======
+	.use(router.allowedMethods())
+router.get("/test", (ctx, next) => {
+>>>>>>> 1978a0b59cadc997994722834c103740e258073d
 	// res.setHeader("Content-Type", "text/html;charset=utf-8");
-  // res.end("如何评价《英雄联盟》S10 主题曲？");
-  const string = "如何评价《英雄联盟》S10 主题曲？"
-  ctx.body=string
+	// res.end("如何评价《英雄联盟》S10 主题曲？");
+	const string = "如何评价《英雄联盟》S10 主题曲？"
+	ctx.body = string
 });
 
 // 等你来答数据请求
-const  questionDatas = require('./datas/WaitYou.json')
-router.get("/question",(ctx,next)=>{
-  // res.setHeader("Content-Type", "text/html;charset=utf-8");
-  // res.end(questionDatas);
-  ctx.body = questionDatas
+const questionDatas = require('./datas/WaitYou.json')
+router.get("/question", (ctx, next) => {
+	// res.setHeader("Content-Type", "text/html;charset=utf-8");
+	// res.end(questionDatas);
+	ctx.body = questionDatas
+})
+// 我的主页数据
+const myHomeDatas = require('./datas/MyHome.json')
+router.get("/myhome", (ctx, next) => {
+	// res.setHeader("Content-Type", "text/html;charset=utf-8");
+	// res.end(questionDatas);
+	ctx.body = myHomeDatas
 })
 // 手机号登录数据请求
 const loginInfoList = require('./datas/login.json')
